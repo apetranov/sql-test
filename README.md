@@ -1,1 +1,1 @@
-Testing flask and SQLite
+A system which adds users to a table

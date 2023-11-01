@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+    Flask Test
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid py-5 text-center">
+        <form action="/" method="post" autocomplete="off">
+            <div class="mb-3">
+                <input autocomplete="false" id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control mx-auto w-auto">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="false" id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control mx-auto w-auto">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="false" id="email" name="email" type="email" placeholder="Email" class="form-control mx-auto w-auto">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Add User</button>
+            </div>  
+        </form>
+
+        <table class="table table-striped">
+            <tbody>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tbody>
+            {% for person in people %}
+                <tr>
+                    <td>{{ person["id"] }}</td>
+                    <td>{{ person["first_name"] }}</td>
+                    <td>{{ person["last_name"] }}</td>
+                    <td>{{ person["email"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
